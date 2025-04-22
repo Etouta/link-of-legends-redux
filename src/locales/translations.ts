@@ -1,0 +1,31 @@
+
+export const translations = {
+  en: {
+    title: "Legend of Zelda",
+    start: "Start Game",
+    controls: "Controls:",
+    move: "Arrow Keys or WASD to move",
+    attack: "Spacebar to attack",
+    youAreDead: "You are dead!",
+    victory: "Victory!",
+    rupeesDead: "You had {score} rupees.",
+    rupeesWin: "Congratulations! You collected {score} rupees.",
+    restart: "Restart",
+    language: "Language",
+    instruction: "Use arrow keys or WASD to move. Press spacebar to attack.",
+  },
+  fr: {
+    title: "La Légende de Zelda",
+    start: "Démarrer le jeu",
+    controls: "Contrôles :",
+    move: "Flèches ou WASD pour bouger",
+    attack: "Barre d'espace pour attaquer",
+    youAreDead: "Vous êtes mort !",
+    victory: "Victoire !",
+    rupeesDead: "Vous aviez {score} rubis.",
+    rupeesWin: "Bravo ! Vous avez collecté {score} rubis.",
+    restart: "Recommencer",
+    language: "Langue",
+    instruction: "Utilisez les flèches ou WASD pour bouger. Barre d'espace pour attaquer.",
+  }
+};

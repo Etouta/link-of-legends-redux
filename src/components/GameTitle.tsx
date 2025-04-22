@@ -1,16 +1,31 @@
 
 import React from 'react';
+import { useLocale } from '../context/LocaleContext';
 
 interface GameTitleProps {
   onStartGame: () => void;
 }
 
 const GameTitle: React.FC<GameTitleProps> = ({ onStartGame }) => {
+  const { t, lang, setLang } = useLocale();
+
   return (
     <div className="min-h-screen flex flex-col items-center justify-center bg-black p-4">
+      <div className="flex w-full justify-end mb-6">
+        <label htmlFor="lang" className="text-white mr-2">{t("language")}</label>
+        <select
+          id="lang"
+          value={lang}
+          onChange={e => setLang(e.target.value as "en" | "fr")}
+          className="rounded bg-yellow-200 px-2 py-1 text-black"
+        >
+          <option value="en">English</option>
+          <option value="fr">Français</option>
+        </select>
+      </div>
       <div className="text-center">
         <h1 className="text-5xl font-bold mb-8 text-yellow-500 animate-pulse">
-          The Legend of Zelda
+          {t("title")}
         </h1>
         
         <div className="w-80 h-80 mx-auto mb-8 border-4 border-yellow-600 bg-green-800 overflow-hidden relative">
@@ -68,13 +83,12 @@ const GameTitle: React.FC<GameTitleProps> = ({ onStartGame }) => {
           onClick={onStartGame}
           className="px-8 py-3 bg-yellow-600 text-white font-bold rounded-md hover:bg-yellow-500 transition-colors text-xl"
         >
-          Start Game
+          {t("start")}
         </button>
-        
         <div className="mt-8 text-white">
-          <p className="mb-2">Controls:</p>
-          <p>Arrow Keys or WASD to move</p>
-          <p>Spacebar to attack</p>
+          <p className="mb-2">{t("controls")}</p>
+          <p>{t("move")}</p>
+          <p>{t("attack")}</p>
         </div>
       </div>
     </div>
@@ -82,3 +96,4 @@ const GameTitle: React.FC<GameTitleProps> = ({ onStartGame }) => {
 };
 
 export default GameTitle;
+

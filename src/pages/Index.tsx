@@ -1,6 +1,8 @@
+
 import React, { useState } from 'react';
 import Game from '../components/Game';
 import GameTitle from '../components/GameTitle';
+import { LocaleProvider } from '../context/LocaleContext';
 
 const Index = () => {
   const [gameStarted, setGameStarted] = useState(false);
@@ -10,14 +12,17 @@ const Index = () => {
   };
   
   return (
-    <div className="min-h-screen bg-black">
-      {gameStarted ? (
-        <Game />
-      ) : (
-        <GameTitle onStartGame={handleStartGame} />
-      )}
-    </div>
+    <LocaleProvider>
+      <div className="min-h-screen bg-black">
+        {gameStarted ? (
+          <Game />
+        ) : (
+          <GameTitle onStartGame={handleStartGame} />
+        )}
+      </div>
+    </LocaleProvider>
   );
 };
 
 export default Index;
+

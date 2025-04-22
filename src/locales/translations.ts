@@ -1,7 +1,6 @@
-
 export const translations = {
   en: {
-    title: "Legend of Zelda",
+    title: "Legend of Zebda",
     start: "Start Game",
     controls: "Controls:",
     move: "Arrow Keys or WASD to move",
@@ -15,7 +14,7 @@ export const translations = {
     instruction: "Use arrow keys or WASD to move. Press spacebar to attack.",
   },
   fr: {
-    title: "La Légende de Zelda",
+    title: "Légende de Zebda",
     start: "Démarrer le jeu",
     controls: "Contrôles :",
     move: "Flèches ou WASD pour bouger",

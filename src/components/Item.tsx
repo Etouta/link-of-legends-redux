@@ -12,14 +12,17 @@ const Item: React.FC<ItemProps> = ({ item, tileSize }) => {
   const { position, type, collected } = item;
   const [spriteUrl, setSpriteUrl] = useState('');
   
-  if (collected) return null;
-  
   useEffect(() => {
     // Only create sprite on client side (not during SSR)
     if (typeof window !== 'undefined') {
       setSpriteUrl(createItemSprite(type));
     }
   }, [type]);
+  
+  // If collected, don't render anything, but this happens after hooks are called
+  if (collected) {
+    return null;
+  }
   
   return (
     <div 
